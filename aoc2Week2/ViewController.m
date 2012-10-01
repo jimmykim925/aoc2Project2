@@ -9,74 +9,42 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) NSMutableArray *inputArray;
 @end
 
 @implementation ViewController
+@synthesize inputArray;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(NSMutableArray*)inputArray
+{
+  inputArray = [[NSMutableArray alloc] init];
+  return inputArray;
 }
 
 -(IBAction)onClick:(id)sender
 {
   UIButton *button = (UIButton *)sender;
-  if (button != nil){
-    switch ([button tag]) {
-      case 0:
-        NSLog(@"0");
-        break;
-      case 1:
-        NSLog(@"1");
-        break;
-      case 2:
-        NSLog(@"2");
-        break;
-      case 3:
-        NSLog(@"3");
-        break;
-      case 4:
-        NSLog(@"4");
-        break;
-      case 5:
-        NSLog(@"5");
-        break;
-      case 6:
-        NSLog(@"6");
-        break;
-      case 7:
-        NSLog(@"7");
-        break;
-      case 8:
-        NSLog(@"8");
-        break;
-      case 9:
-        NSLog(@"9");
-        break;
-      case 10:
-        NSLog(@"10");
-        break;
-      case 11:
-        NSLog(@"11");
-        break;
-      case 12:
-        NSLog(@"12");
-        break;
-      
-      default:
-        break;
-    }
-   
-  }
+  
+  NSString *value = [sender currentTitle];
+  UILabel *labelValue = self.displayResult;
+  NSString *displayText = labelValue.text;
+  NSString *appendedText = [displayText stringByAppendingString:value];
+  labelValue.text = appendedText;
   
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)addition:(id)sender {
 }
+
+
+- (IBAction)displayResult:(id)sender {
+}
+
+
 
 @end
