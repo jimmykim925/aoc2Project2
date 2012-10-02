@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "calculateResult.h"
+#import "SecondViewController.h"
 
 @interface ViewController ()
 // create property for BOOL check for key usage and for calculateResult class
@@ -34,7 +35,7 @@
     [super viewDidLoad];
 }
 
-// create label and get UILabel information, append strings for more than 1 digit
+// create label and get UILabel information, append strings more than 1 digit
 -(IBAction)onClick:(id)sender
 {
   NSString *value = [sender currentTitle];
@@ -64,7 +65,17 @@
   self.displayResult.text = answerLabel;
 }
 
+// Sets action for clear button
+- (IBAction)clear:(id)sender {
+  self.displayResult.text = 0;
+}
 
+- (IBAction)showModalView:(id)sender {
+  SecondViewController *viewController = [[SecondViewController alloc] initWithNibName:@"SecondView" bundle:nil];
+  if (viewController != nil){
+    [self presentViewController:viewController animated:YES completion:nil];
+  }
+}
 
 
 @end

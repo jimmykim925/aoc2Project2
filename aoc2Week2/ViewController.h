@@ -14,4 +14,6 @@
 
 -(IBAction)onClick:(id)sender;
 
+- (IBAction)showModalView:(id)sender;
+
 @end
