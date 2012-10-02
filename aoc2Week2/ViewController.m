@@ -7,42 +7,54 @@
 //
 
 #import "ViewController.h"
+#import "calculateResult.h"
 
 @interface ViewController ()
-@property (nonatomic, strong) NSMutableArray *inputArray;
+
+@property (nonatomic) BOOL currentlyUsingInputKeys;
+@property (nonatomic, strong) calculateResult *calcResult;
 @end
 
 @implementation ViewController
-@synthesize inputArray;
+@synthesize displayResult;
+@synthesize currentlyUsingInputKeys;
+@synthesize calcResult;
+
+-(calculateResult *)Result
+{
+  calcResult = [[calculateResult alloc] init];
+  return calcResult;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
 
--(NSMutableArray*)inputArray
-{
-  inputArray = [[NSMutableArray alloc] init];
-  return inputArray;
-}
-
 -(IBAction)onClick:(id)sender
 {
-  UIButton *button = (UIButton *)sender;
-  
   NSString *value = [sender currentTitle];
-  UILabel *labelValue = self.displayResult;
-  NSString *displayText = labelValue.text;
-  NSString *appendedText = [displayText stringByAppendingString:value];
-  labelValue.text = appendedText;
   
+  if (self.currentlyUsingInputKeys){
+    UILabel *labelValue = self.displayResult;
+    NSString *displayText = labelValue.text;
+    NSString *appendedText = [displayText stringByAppendingString:value];
+    labelValue.text = appendedText;
+  } else{
+    self.displayResult.text = value;
+    self.currentlyUsingInputKeys = YES;
+  }
 }
 
 - (IBAction)addition:(id)sender {
+  //[self addInputs:[self.displayResult.text intValue]];
 }
 
 
 - (IBAction)displayResult:(id)sender {
+  int result;
+  NSString *resultAmount = [NSString stringWithFormat:@"%d", result];
+  self.displayResult.text = resultAmount;
 }
 
 

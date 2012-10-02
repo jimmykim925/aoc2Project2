@@ -18,6 +18,7 @@
 		97180D0E161942A700D948F4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97180D0D161942A700D948F4 /* Default-568h@2x.png */; };
 		97180D11161942A700D948F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97180D10161942A700D948F4 /* ViewController.m */; };
 		97180D14161942A700D948F4 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97180D12161942A700D948F4 /* ViewController.xib */; };
+		97180D1C161A7AD200D948F4 /* calculateResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 97180D1B161A7AD200D948F4 /* calculateResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		97180D0F161942A700D948F4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		97180D10161942A700D948F4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		97180D13161942A700D948F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		97180D1A161A7AD200D948F4 /* calculateResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculateResult.h; sourceTree = "<group>"; };
+		97180D1B161A7AD200D948F4 /* calculateResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calculateResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				97180D10161942A700D948F4 /* ViewController.m */,
 				97180D12161942A700D948F4 /* ViewController.xib */,
 				97180CFE161942A700D948F4 /* Supporting Files */,
+				97180D1A161A7AD200D948F4 /* calculateResult.h */,
+				97180D1B161A7AD200D948F4 /* calculateResult.m */,
 			);
 			path = aoc2Week2;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				97180D04161942A700D948F4 /* main.m in Sources */,
 				97180D08161942A700D948F4 /* AppDelegate.m in Sources */,
 				97180D11161942A700D948F4 /* ViewController.m in Sources */,
+				97180D1C161A7AD200D948F4 /* calculateResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

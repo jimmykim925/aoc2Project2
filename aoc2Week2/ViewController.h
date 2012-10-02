@@ -9,15 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-{
-  
-}
-
--(void)addInputs:(int)addInputs;
--(int)add:(NSString *)add;
 
 @property (weak, nonatomic) IBOutlet UILabel *displayResult;
-
 
 -(IBAction)onClick:(id)sender;
 
