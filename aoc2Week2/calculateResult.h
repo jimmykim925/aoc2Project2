@@ -10,7 +10,7 @@
 
 @interface calculateResult : NSObject
 
--(void)addInputs:(int)addInputs;
--(int)add:(NSString *)add;
+-(void)addInputsValues:(double)addInputs;
+-(double)addValues:(NSString *)add;
 
 @end

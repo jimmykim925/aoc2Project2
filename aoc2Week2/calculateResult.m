@@ -20,36 +20,37 @@
 
 -(NSMutableArray*)inputToArray
 {
-  inputToArray = [[NSMutableArray alloc] init];
+  if (inputToArray == nil) inputToArray = [[NSMutableArray alloc] init];
   return inputToArray;
 }
 
--(void)addInputs:(int)addInputs
+-(void)addInputsValues:(double)addInputs
 {
-  [self.inputToArray addObject:[NSNumber numberWithInt:addInputs]];
+  [self.inputToArray addObject:[NSNumber numberWithDouble:addInputs]];
 }
 
--(int)getLastObject
+-(double)getLastObject
 {
   NSNumber *lastArrayObject = [self.inputToArray lastObject];
   
   // Checks to make sure the array is not empty, then removes last object in array
-  if (lastArrayObject != nil)
+  if (lastArrayObject)
   {
     [self.inputToArray removeLastObject];
   }
-  return [lastArrayObject integerValue];
+  return [lastArrayObject doubleValue];
 }
 
--(int)add:(NSString *)add
+-(double)addValues:(NSString *)add
 {
   int answer = 0;
   
-  if ([add isEqualToString:@"+"])
+  if ([add isEqualToString:@"="])
   {
     answer = [self getLastObject] + [self getLastObject];
   }
 
+  [self addInputsValues:answer];
   return answer;
 }
 

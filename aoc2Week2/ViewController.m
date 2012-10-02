@@ -10,7 +10,7 @@
 #import "calculateResult.h"
 
 @interface ViewController ()
-
+// create property for BOOL check for key usage and for calculateResult class
 @property (nonatomic) BOOL currentlyUsingInputKeys;
 @property (nonatomic, strong) calculateResult *calcResult;
 @end
@@ -18,12 +18,15 @@
 @implementation ViewController
 @synthesize displayResult;
 @synthesize currentlyUsingInputKeys;
-@synthesize calcResult;
+@synthesize calcResult = _calcResult;
 
--(calculateResult *)Result
+// initialize and return calcResult
+-(calculateResult *)calcResult
 {
-  calcResult = [[calculateResult alloc] init];
-  return calcResult;
+  if (!_calcResult){
+    _calcResult = [[calculateResult alloc] init];
+  }
+  return _calcResult;
 }
 
 - (void)viewDidLoad
@@ -31,6 +34,7 @@
     [super viewDidLoad];
 }
 
+// create label and get UILabel information, append strings for more than 1 digit
 -(IBAction)onClick:(id)sender
 {
   NSString *value = [sender currentTitle];
@@ -46,16 +50,20 @@
   }
 }
 
-- (IBAction)addition:(id)sender {
-  //[self addInputs:[self.displayResult.text intValue]];
+- (IBAction)addButton {
+  [self.calcResult addInputsValues:[self.displayResult.text doubleValue]];
+  self.currentlyUsingInputKeys = NO;
 }
 
-
-- (IBAction)displayResult:(id)sender {
-  int result;
-  NSString *resultAmount = [NSString stringWithFormat:@"%d", result];
-  self.displayResult.text = resultAmount;
+- (IBAction)displayResult:(UIButton *)sender {
+  if (self.currentlyUsingInputKeys){
+    [self addButton];
+  }
+  int answers = [self.calcResult addValues:sender.currentTitle];
+  NSString *answerLabel = [NSString stringWithFormat:@"%d", answers];
+  self.displayResult.text = answerLabel;
 }
+
 
 
 
