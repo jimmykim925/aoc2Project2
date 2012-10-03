@@ -77,5 +77,20 @@
   }
 }
 
+- (IBAction)changeBackgroundColor:(id)sender {
+  UISegmentedControl *segmentControl = (UISegmentedControl *)sender;
+  if (segmentControl != nil) {
+    int indexNumber = segmentControl.selectedSegmentIndex;
+    
+    if (indexNumber == 0){
+      self.view.backgroundColor = [UIColor greenColor];
+    } else if (indexNumber == 1){
+      self.view.backgroundColor = [UIColor redColor];
+    } else if (indexNumber == 2) {
+      self.view.backgroundColor = [UIColor blackColor];
+    }
+  }
+}
+
 
 @end

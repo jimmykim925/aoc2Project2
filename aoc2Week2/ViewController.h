@@ -16,4 +16,5 @@
 
 - (IBAction)showModalView:(id)sender;
 
+- (IBAction)changeBackgroundColor:(id)sender;
 @end
