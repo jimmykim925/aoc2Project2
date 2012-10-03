@@ -33,11 +33,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    switchOne.on = false;
 }
 
 // create label and get UILabel information, append strings more than 1 digit
 -(IBAction)onClick:(id)sender
 {
+  //UIButton *button = (UIButton*)sender;
+  
   NSString *value = [sender currentTitle];
   
   if (self.currentlyUsingInputKeys){
@@ -83,12 +86,50 @@
     int indexNumber = segmentControl.selectedSegmentIndex;
     
     if (indexNumber == 0){
-      self.view.backgroundColor = [UIColor greenColor];
+      self.view.backgroundColor = [UIColor whiteColor];
     } else if (indexNumber == 1){
-      self.view.backgroundColor = [UIColor redColor];
+      self.view.backgroundColor = [UIColor blueColor];
     } else if (indexNumber == 2) {
-      self.view.backgroundColor = [UIColor blackColor];
+      self.view.backgroundColor = [UIColor greenColor];
     }
+  }
+}
+
+- (IBAction)onSwitched:(id)sender {
+  
+  UISwitch *switchedOn = (UISwitch *)sender;
+  if (switchedOn != nil) {
+    if (switchOne.on){
+      buttonZero.enabled = true;
+      buttonOne.enabled = true;
+      buttonTwo.enabled = true;
+      buttonThree.enabled = true;
+      buttonFour.enabled = true;
+      buttonFive.enabled = true;
+      buttonSix.enabled = true;
+      buttonSeven.enabled = true;
+      buttonEight.enabled = true;
+      buttonNine.enabled = true;
+      buttonAdd.enabled = true;
+      buttonEquals.enabled = true;
+      buttonClear.enabled = true;
+    } else {
+      buttonZero.enabled = false;
+      buttonOne.enabled = false;
+      buttonTwo.enabled = false;
+      buttonThree.enabled = false;
+      buttonFour.enabled = false;
+      buttonFive.enabled = false;
+      buttonSix.enabled = false;
+      buttonSeven.enabled = false;
+      buttonEight.enabled = false;
+      buttonNine.enabled = false;
+      buttonAdd.enabled = false;
+      buttonEquals.enabled = false;
+      buttonClear.enabled = false;
+      self.displayResult.text = 0;
+    }
+
   }
 }
 

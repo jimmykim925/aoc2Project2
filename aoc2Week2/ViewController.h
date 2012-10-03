@@ -9,6 +9,22 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+  IBOutlet UISwitch *switchOne;
+  IBOutlet UIButton *buttonZero;
+  IBOutlet UIButton *buttonOne;
+  IBOutlet UIButton *buttonTwo;
+  IBOutlet UIButton *buttonThree;
+  IBOutlet UIButton *buttonFour;
+  IBOutlet UIButton *buttonFive;
+  IBOutlet UIButton *buttonSix;
+  IBOutlet UIButton *buttonSeven;
+  IBOutlet UIButton *buttonEight;
+  IBOutlet UIButton *buttonNine;
+  IBOutlet UIButton *buttonAdd;
+  IBOutlet UIButton *buttonEquals;
+  IBOutlet UIButton *buttonClear;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *displayResult;
 
@@ -17,4 +33,7 @@
 - (IBAction)showModalView:(id)sender;
 
 - (IBAction)changeBackgroundColor:(id)sender;
+
+- (IBAction)onSwitched:(id)sender;
+
 @end
